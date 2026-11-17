@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" id="themeColor" content="#f5f5f5">
+    <meta name="color-scheme" content="light dark">
+    <script>(function(){var t=null;try{t=localStorage.getItem("unlock_dz_theme")}catch(e){}if(t!=="light"&&t!=="dark")t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);var m=document.getElementById("themeColor");if(m)m.setAttribute("content",t==="dark"?"#000000":"#f5f5f5");var l=null;try{l=localStorage.getItem("unlock_dz_lang")}catch(e){}if(l==="en"||l==="fr"){document.documentElement.setAttribute("lang",l);document.documentElement.setAttribute("dir","ltr")}})();</script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>UNLOCK DZ — مساعد رسائل الاستئناف</title>
+    <meta name="description" content="UNLOCK DZ: تجهيز رسائل الاستئناف وتنظيم حالات الحسابات والألعاب .">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="splash" id="splash"><div class="splash-logo"><div class="logo-img" role="img" aria-label="UNLOCK DZ"></div></div><div class="splash-title">UNLOCK DZ</div></div>
+<header class="header"><div class="header-logo"><div class="logo-img" role="img" aria-label="UNLOCK DZ"></div></div><span class="header-title">UNLOCK <span>DZ</span></span><div class="lang-wrap"><button class="lang-btn" id="langBtn" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="تغيير اللغة" title="تغيير اللغة"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><span id="langCode">AR</span></button><div class="lang-menu" id="langMenu" hidden><button type="button" data-lang="ar" lang="ar" aria-pressed="true"><span>العربية</span><span class="lc">AR</span></button><button type="button" data-lang="en" lang="en" aria-pressed="false"><span>English</span><span class="lc">EN</span></button><button type="button" data-lang="fr" lang="fr" aria-pressed="false"><span>Français</span><span class="lc">FR</span></button></div></div><button class="theme-btn" id="themeBtn" type="button" aria-label="تبديل الوضع الفاتح والداكن" title="الوضع الفاتح / الداكن"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button><a class="gh-btn" id="ghBtn" href="https://github.com/r-c-a-16" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><img src="assets/avatar.webp" alt="" width="40" height="40"></a></header>
+<div class="main-scroll" id="mainScroll">
+
+<div class="page active" id="page-home">
+ <section class="alerts" id="alerts" aria-label="أحدث تنبيهات الحظر" hidden></section>
+ <div class="hero"><div class="hero-logo"><div class="logo-img" role="img" aria-label="UNLOCK DZ"></div></div>
+  <h2>UNLOCK <span class="hl">DZ</span></h2>
+  <p>مساعد لتجهيز رسائل الاستئناف وتنظيم حالاتك. يجهّز لك الرسالة ويوجّهك إلى القناة الرسمية.</p>
+  <button class="btn btn-primary" id="btnStart">ابدأ الآن</button>
+  <button class="btn btn-outline" id="btnLast" style="display:none"></button>
+</div>
+</div>
+
+<div class="page" id="page-process">
+ <div class="step-indicator" id="stepIndicator"><div class="si-dot active" id="si1">1</div><div class="si-line" id="siLine1"></div><div class="si-dot" id="si2">2</div><div class="si-line" id="siLine2"></div><div class="si-dot" id="si3">3</div></div>
+ <button class="btn-back" id="btnBack" style="display:none">→ رجوع</button>
+
+ <div class="card" id="platformCard">
+  <div class="card-header"><div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div><div><div class="card-title">اختر المنصة</div><div class="card-subtitle">شبكة اجتماعية أو لعبة</div></div></div>
+  <div class="search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchInput" placeholder="ابحث عن منصة أو لعبة..." autocomplete="off"></div>
+  <div class="fav-section" id="favSection" style="display:none"><div class="section-label"><i class="fa-solid fa-star"></i> المفضلة</div><div class="platform-row" id="rowFav"></div></div>
+  <div class="section-label"><i class="fa-solid fa-comments"></i> الشبكات الاجتماعية</div><div class="platform-row" id="rowSocial"></div>
+  <div class="section-label"><i class="fa-solid fa-gamepad"></i> الألعاب</div><div class="platform-row" id="rowGames"></div>
+  <p class="empty" id="noPlat" style="display:none">لا توجد منصة مطابقة للبحث.</p>
+ </div>
+
+ <div class="card" id="formCard" style="display:none">
+  <div class="card-header"><div class="card-icon"><i id="fIcon" class="fa-solid fa-circle-info"></i></div><div><div class="card-title" id="fName">-</div><div class="card-subtitle">اختر نوع المشكلة ثم أكمل البيانات</div></div></div>
+  <div class="ocr-box">
+  <span class="beta-badge" aria-label="ميزة تجريبية"><i class="fa-solid fa-flask"></i> تجريبية | beta</span>
+  <label class="input-label" for="ocrFile">لقطة شاشة لرسالة الحظر (اختياري)</label>
+  <p class="note">تُستخدم الصورة لاقتراح نوع المشكلة. لا ترفع صورة تظهر فيها كلمة مرور أو رمز.</p>
+  <input type="file" id="ocrFile" accept="image/*" hidden>
+  <button class="btn btn-outline" id="btnOcr" type="button"><i class="fa-solid fa-image"></i> تحليل لقطة الشاشة</button>
+  <div class="prog-bar" id="ocrProg" hidden><div class="prog-fill" id="ocrBar"></div></div>
+  <p class="note" id="ocrStatus" role="status" aria-live="polite"></p>
+  <div class="ocr-res" id="ocrRes" style="display:none"></div>
+ </div>
+ <label class="input-label">نوع المشكلة</label><div class="reason-grid" id="issueGrid"></div>
+  <div id="diag" style="display:none"><label class="input-label" style="margin-top:12px">ما الذي يحدث لك؟</label><div class="reason-grid" id="diagGrid"></div><div class="tip" id="diagTip" style="display:none"></div></div>
+  <div id="factsBox" style="display:none"><label class="input-label" style="margin-top:12px">ما الذي ينطبق على حالتك؟ (اختياري)</label><p class="note fx-note">اختر فقط ما تعرفه فعلًا. تُضاف العبارات التي تحددها إلى الرسالة بصياغة محايدة؛ أي ادعاء غير صحيح قد يضر بطلبك لدى المنصة.</p><div id="factsList"></div></div>
+  <div class="fld"><label id="idLabel">المعرّف</label><div class="input-wrap"><input type="text" id="userInput" autocomplete="off" maxlength="60"><i class="fa-solid fa-user" id="inputIcon"></i></div><p class="input-err" id="inputErr"></p><p class="note alert"><i class="fa-solid fa-triangle-exclamation"></i> أدخل المعرّف العام فقط. لا تُدخل كلمة مرور أو رمز تحقق في أي حقل.</p></div>
+  <div class="fld"><label for="dateIn">تاريخ ظهور المشكلة (اختياري)</label><input type="date" id="dateIn"></div>
+  <div class="fld"><label for="detIn">تفاصيل الواقعة (اختياري)</label><textarea id="detIn" dir="auto" maxlength="1500" placeholder="اكتب فقط ما تعرفه فعلًا، مثل نص الإشعار الذي وصلك."></textarea><p class="warn" id="detWarn" role="alert"><i class="fa-solid fa-triangle-exclamation"></i> يبدو أن هذا الحقل يتضمن معلومة حساسة (كلمة مرور أو رمز أو رقم بطاقة). احذفها قبل المتابعة.</p></div>
+  <label class="chk" id="claimRow"><input type="checkbox" id="claimIn"><span>أؤكد بحسب علمي أنني لم أخالف شروط الخدمة (حدده فقط إن كان صحيحًا؛ تُضاف الجملة إلى الرسالة عند تحديده)</span></label>
+  <div class="two fld"><div><label for="langIn">لغة الرسالة</label><select id="langIn"><option value="ar">العربية</option><option value="en" selected>English</option><option value="fr">Français</option></select></div><div><label for="styleIn">الأسلوب</label><select id="styleIn"><option value="short">رسمي مختصر</option><option value="long">رسمي مفصّل</option></select></div></div>
+  <p class="note" style="font-size:11px;color:var(--text2);margin-top:-4px">الإنجليزية هي الأكثر قبولًا لدى فرق الدعم الدولية؛ اختر لغة أخرى إن كانت المنصة تدعمها.</p>
+  <p class="input-err" id="noTpl"></p>
+  <button class="btn btn-primary" id="btnSubmit" style="margin-top:12px"><i class="fa-solid fa-pen-nib"></i> تجهيز مسودة الرسالة</button>
+ </div>
+
+ <div class="result-box" id="resultBox">
+  <div class="card">
+   <div class="success-badge" style="background:var(--surface2);color:var(--text)"><i class="fa-solid fa-circle-info"></i> تم تجهيز مسودة الرسالة</div>
+   <p class="note" style="font-size:11px;color:var(--text2)">الرسالة لم تُرسل تلقائيًا. راجعها وعدّلها، ثم قدّمها بنفسك عبر القناة الرسمية للمنصة.</p>
+   <div class="card-title" id="resMeta" style="margin:8px 0;font-size:12px"></div>
+   <div class="pred" id="pred" aria-live="polite">
+    <div class="pred-top"><b>اكتمال طلبك</b><span id="predPct">0/0</span></div>
+    <div class="pred-track" role="progressbar" aria-label="اكتمال طلبك" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="predTrack"><div class="pred-bar" id="predBar"></div></div>
+    <div class="pred-txt" id="predTxt"></div>
+    <details><summary>ما الذي ينقص؟</summary><ul id="predWhy"></ul></details>
+    <div class="dis">مؤشر محلي يوضح ما أضفته إلى طلبك وما ينقصه. لا يتنبأ بقرار المنصة ولا يعدك بشيء؛ القرار النهائي بيد المنصة وحدها.</div>
+   </div>
+   <textarea class="ta big" id="msgEdit" dir="auto" maxlength="4000" aria-label="نص الرسالة"></textarea>
+   <div class="warn" id="sensWarn"><i class="fa-solid fa-triangle-exclamation"></i> يبدو أن النص يتضمن معلومة حساسة (كلمة مرور أو رمز). احذفها قبل النسخ أو الحفظ.</div>
+   <div class="btns">
+    <button class="btn btn-copy" id="btnCopy"><i class="fa-solid fa-copy"></i> نسخ الرسالة</button>
+    <button class="btn btn-primary" id="btnSave"><i class="fa-solid fa-floppy-disk"></i> حفظ في السجل</button>
+    <button class="btn btn-outline" id="btnTxt"><i class="fa-solid fa-file-arrow-down"></i> تصدير كنص (.txt)</button>
+    <button class="btn btn-primary" id="btnMail" type="button" style="display:none"><i class="fa-solid fa-envelope"></i> إرسال عبر الإيميل الفوري</button>
+    <button class="btn btn-outline" id="btnRegen"><i class="fa-solid fa-rotate"></i> إعادة إنشاء المسودة</button>
+   </div>
+  </div>
+  <div class="card">
+   <div class="card-header"><div class="card-icon"><i class="fa-solid fa-list-ol"></i></div><div><div class="card-title">خطوات عامة مقترحة</div><div class="card-subtitle">إرشادات عامة غير مرتبطة بقرار محدد</div></div></div>
+   <ol class="steps-ol" id="stepsOl"></ol>
+   <div id="resLinks"></div>
+   <p class="note" style="text-align:center">هل أفادتك الأداة؟</p><div class="star-rating" id="starRating"></div>
+  </div>
+  <button class="btn btn-outline" id="btnReset"><i class="fa-solid fa-rotate-left"></i> حالة جديدة</button>
+ </div>
+</div>
+
+<div class="page" id="page-log">
+ <div class="card"><div class="card-header"><div class="card-icon"><i class="fa-solid fa-folder-open"></i></div><div><div class="card-title">سجل الحالات والمسودات</div><div class="card-subtitle">محفوظ محليًا على هذا الجهاز فقط</div></div></div>
+  <p class="note" style="font-size:11px;color:var(--text2)">السجل ليس في حساب سحابي؛ مسح بيانات المتصفح أو التطبيق قد يحذفه. صدّر نسخة احتياطية دوريًا. الحالات يحددها المستخدم يدويًا ولا يمكن للتطبيق معرفة رد المنصة.</p>
+  <div class="two fld"><div><label for="logSearch">بحث</label><input type="text" id="logSearch" placeholder="منصة أو نص..."></div><div><label for="logFilter">الحالة</label><select id="logFilter"></select></div></div>
+  <div class="btns"><button class="btn btn-outline" id="btnExp"><i class="fa-solid fa-file-export"></i> تصدير السجل (JSON)</button><button class="btn btn-outline" id="btnImp"><i class="fa-solid fa-file-import"></i> استيراد سجل</button><button class="btn btn-danger" id="btnClearLog"><i class="fa-solid fa-trash"></i> مسح السجل</button></div>
+  <input type="file" id="impFile" accept="application/json,.json" style="display:none">
+ </div>
+ <div id="logList"></div>
+</div>
+
+<div class="page" id="page-help">
+ <div class="card"><div class="card-header"><div class="card-icon"><i class="fa-solid fa-life-ring"></i></div><div><div class="card-title">مركز المساعدة</div><div class="card-subtitle">اختر منصة لعرض القنوات المتاحة</div></div></div>
+  <div class="fld"><select id="helpSel" aria-label="المنصة"></select></div><div id="helpInfo"></div></div>
+ <div class="card"><div class="card-header"><div class="card-icon"><i class="fa-solid fa-user-shield"></i></div><div><div class="card-title">حماية المستخدم</div><div class="card-subtitle">ممارسات آمنة أثناء استرداد الحساب</div></div></div>
+  <div class="help-item danger"><h4><i class="fa-solid fa-key"></i> لا تشارك كلمة المرور أو الرموز</h4><p>لا تعطِ كلمة المرور أو رموز التحقق أو رموز الاسترداد لأي شخص أو موقع، ولا يطلبها هذا التطبيق.</p></div>
+  <div class="help-item danger"><h4><i class="fa-solid fa-hand-holding-dollar"></i> لا تدفع مقابل «ضمان» فك الحظر</h4><p>لا أحد خارج المنصة يستطيع ضمان رفع الحظر. كل من يعد بذلك مشتبه به.</p></div>
+  <div class="help-item danger"><h4><i class="fa-solid fa-user-lock"></i> لا تمنح غيرك وصولًا إلى حسابك</h4><p>لا تسلّم الحساب لوسيط ولا تثبّت تطبيقات تعد بالاسترداد.</p></div>
+  <div class="help-item caution"><h4><i class="fa-solid fa-globe"></i> استخدم القنوات الرسمية وتحقق من العنوان</h4><p>تأكد من نطاق الموقع قبل تسجيل الدخول، وافتح الأدوات من التطبيق الرسمي أو من مركز المساعدة نفسه.</p></div>
+  <div class="help-item caution"><h4><i class="fa-solid fa-id-card"></i> احذر رفع وثائقك الشخصية</h4><p>لا ترفع صور الهوية إلا داخل القناة الرسمية للمنصة وعند طلبها منك فقط.</p></div>
+  <div class="help-item caution"><h4><i class="fa-solid fa-shield"></i> تجنب التطبيقات غير الرسمية</h4><p>استخدام برامج الطرف الثالث من أسباب تقييد الحسابات الشائعة؛ استخدم التطبيق الرسمي فقط.</p></div>
+ </div>
+ <div class="card" id="scamCard"><div class="card-header"><div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div><div><div class="card-title">فاحص عروض «فك الحظر»</div><div class="card-subtitle">الصق العرض الذي وصلك من وسيط لتعرف علامات الاحتيال</div></div></div>
+  <div class="fld"><textarea class="ta" id="scamIn" dir="auto" maxlength="2000" placeholder="الصق نص العرض هنا..." style="min-height:90px"></textarea></div>
+  <div class="btns"><button class="btn btn-primary" id="scamBtn" type="button"><i class="fa-solid fa-shield-halved"></i> افحص العرض</button></div>
+  <div id="scamOut" aria-live="polite"></div>
+  <p class="note" style="font-size:11px;color:var(--text2)">غياب العلامات لا يعني أن العرض آمن.</p></div>
+ <div class="card"><div class="card-header"><div class="card-icon"><i class="fa-solid fa-circle-info"></i></div><div><div class="card-title">عن الأداة</div></div></div>
+  <div class="feat-row">
+  <div class="feat-item"><i class="fa-solid fa-folder-open"></i><div class="ft">سجل الحالات</div><div class="fd">حفظ المسودات ومتابعتها</div></div>
+  <div class="feat-item"><i class="fa-solid fa-pen-to-square"></i><div class="ft">رسائل قابلة للتعديل</div><div class="fd">بالعربية والإنجليزية والفرنسية</div></div>
+  <div class="feat-item"><i class="fa-solid fa-file-export"></i><div class="ft">تصدير وحفظ</div><div class="fd">نسخ احتياطي لسجلك</div></div>
+ </div>
+  <div class="dev-btn-wrap"><a class="dev-btn lnk" id="devBtn" href="https://t.me/r_c_a_16" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> قناتنا على تلجرام</a></div>
+ </div>
+</div>
+
+<div class="page" id="page-settings">
+ <div class="card"><div class="card-header"><div class="card-icon"><i class="fa-solid fa-gear"></i></div><div><div class="card-title">الإعدادات والبيانات</div><div class="card-subtitle">إدارة تفضيلاتك وبياناتك</div></div></div>
+  <div class="help-item"><h4><i class="fa-solid fa-hard-drive"></i> ما الذي يُخزَّن؟</h4><p>المفضلة، آخر منصة، التقييم، والسجل (حتى 100 سجل، كل رسالة حتى 4000 حرف).</p></div>
+  <div class="help-item"><h4><i class="fa-solid fa-wifi"></i> دون اتصال</h4><p>إنشاء الرسائل والسجل والتصدير تعمل دون اتصال. الخطوط والأيقونات وفتح روابط المساعدة تحتاج إنترنت. قراءة لقطات الشاشة تحتاج إنترنت أول مرة لتحميل الأداة وبيانات اللغة.</p></div>
+  <div class="help-item"><h4><i class="fa-solid fa-plug"></i> التكاملات</h4><p>لا يوجد حاليًا أي تكامل رسمي: لا فحص لحالة الحظر ولا إرسال استئناف ولا تتبع للردود.</p></div>
+  <div class="btns"><button class="btn btn-danger" id="btnClearAll"><i class="fa-solid fa-trash"></i> مسح كل البيانات المحلية</button></div>
+ </div>
+</div>
+
+</div>
+<nav class="bottom-nav">
+ <button class="nav-item active" data-page="home"><i class="fa-solid fa-house"></i><span>الرئيسية</span></button>
+ <button class="nav-item" data-page="process"><i class="fa-solid fa-layer-group"></i><span>المنصات</span></button>
+ <button class="nav-item" data-page="log"><i class="fa-solid fa-folder-open"></i><span>السجل</span></button>
+ <button class="nav-item" data-page="help"><i class="fa-solid fa-circle-question"></i><span>المساعدة</span></button>
+ <button class="nav-item" data-page="settings"><i class="fa-solid fa-gear"></i><span>الإعدادات</span></button>
+</nav>
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i> <span id="toastTxt"></span></div>
+<script src="js/app.js"></script>
+</body>
+</html>
