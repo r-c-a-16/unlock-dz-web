@@ -1,78 +1,90 @@
 # UNLOCK DZ
 
-An open-source assistant that helps you prepare appeal messages and keep track of account and game cases, in Arabic, English and French.
+An open-source web application for preparing account appeal messages and managing account-related cases.
 
-> The app prepares a draft for you. It never sends anything on your behalf, and it has no connection to any platform's moderation system. You review the draft and submit it yourself through the platform's official channel.
+UNLOCK DZ provides editable appeal templates, case tracking, and guidance for social media platforms and online games in Arabic, English, and French.
 
 ## Features
 
-- **Appeal message drafts** for 30+ social networks and games, generated from neutral, editable templates in three languages (Arabic, English, French).
-- **Case log** with statuses, notes and follow-up dates, stored locally in your browser. Export and import as JSON, or add follow-ups to your calendar (`.ics`).
-- **Guided appeal information** for selected platforms, with a "last reviewed" date and a warning when the information gets old.
-- **Safety checks** that block passwords, verification codes and card numbers from being entered or saved.
-- **Scam checker** that scans a pasted "unban service" offer for common fraud signs, entirely on your device.
-- **Screenshot reader (beta)** that suggests an issue type from a ban-message screenshot using client-side OCR.
-- Light and dark themes, responsive layout from phones to desktops, and full RTL support.
+- Appeal message generation for 30+ platforms and games.
+- Multilingual appeal templates (Arabic, English, and French).
+- Local case management with statuses, notes, and follow-up dates.
+- JSON export and import for case records.
+- Calendar reminders using `.ics` files.
+- Platform-specific appeal guidance with review dates.
+- Safety checks for passwords, verification codes, and card numbers.
+- Scam checker for suspicious account recovery offers.
+- Screenshot reader (Beta) using client-side OCR.
+- Light and dark themes.
+- Responsive mobile and desktop interface.
+- Full right-to-left (RTL) support.
 
 ## Privacy
 
-All data stays in your browser (`localStorage`). The app has no backend and sends nothing to any server. The only network requests are for fonts, icons, help links you choose to open, and the OCR library, which is loaded on demand.
+- Data is stored locally in the browser using `localStorage`.
+- No backend or user registration required.
+- No connection to platform moderation systems.
+- External resources are loaded only when required.
 
-## Project structure
+## Important Information
 
+UNLOCK DZ is an assistance tool. It prepares appeal drafts but does not submit appeals automatically or guarantee account recovery.
+
+Users must review and submit their appeals through official platform channels.
+
+## Project Structure
+
+```text
+UNLOCK-DZ/
+├── index.html
+├── style.css
+├── app.js
+├── README.md
+└── LICENSE
 ```
-index.html      Page markup
-css/style.css   Styles (light/dark themes, responsive layout)
-js/app.js       Application logic (platforms, templates, log, OCR, i18n)
-assets/         Logo, favicons and avatar
-LICENSE         MIT License
-```
 
-There is no build step and there are no dependencies to install.
+## Getting Started
 
-## Getting started
-
-Clone the repository and open `index.html` in a browser, or serve the folder with any static file server:
+Clone the repository:
 
 ```bash
 git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+```
+
+Open the project directory and run:
+
+```bash
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Visit:
 
-## Deploying to GitHub Pages
+```text
+http://localhost:8000
+```
 
-1. Push the project to a GitHub repository, with `index.html` in the repository root.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, then select `main` and `/ (root)`.
-4. Save. Your site will be available at `https://<your-username>.github.io/<your-repo>/`.
+You can also open `index.html` directly in your browser.
 
-## Customizing
+## Third-Party Resources
 
-| What                 | Where                                                  |
-| -------------------- | ------------------------------------------------------ |
-| Platforms            | The `add(...)` blocks near the top of `js/app.js`      |
-| Message templates    | The `T` object in `js/app.js`                          |
-| Interface strings    | The `TR_DATA` translation table in `js/app.js`         |
-| Appeal guidance      | The `APPEAL` object in `js/app.js`                     |
-| Colors and theming   | CSS variables at the top of `css/style.css`            |
+- [Font Awesome](https://fontawesome.com)
+- [Google Fonts - Alexandria](https://fonts.google.com/specimen/Alexandria)
+- [Tesseract.js](https://github.com/naptha/tesseract.js)
 
 ## Contributing
 
-Issues and pull requests are welcome. When updating platform links or appeal guidance, please cite an official source and update the `checked` date.
+Contributions, bug reports, and feature suggestions are welcome through GitHub Issues and Pull Requests.
 
 ## License
 
-Released under the [MIT License](LICENSE). You are free to use, modify, distribute and sell this software, including for commercial purposes, as long as the copyright and license notice are kept.
-
-## Third-party resources
-
-- [Font Awesome](https://fontawesome.com), loaded from a CDN
-- [Alexandria](https://fonts.google.com/specimen/Alexandria) via Google Fonts, loaded from a CDN
-- [Tesseract.js](https://github.com/naptha/tesseract.js), loaded from a CDN only when the screenshot reader is used
+Released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Disclaimer
 
-Platform names such as WhatsApp, TikTok and Instagram are trademarks of their respective owners. This project is independent and is not affiliated with, endorsed by, or sponsored by any of them. The software is provided "as is", and it cannot guarantee the outcome of any appeal; the final decision always rests with the platform.
+UNLOCK DZ is an independent project and is not affiliated with or endorsed by any social media platform or game publisher.
+
+All trademarks belong to their respective owners. Account restrictions and appeal decisions remain under the control of the relevant platforms.
+
+---
+
+**UNLOCK DZ** — Account assistance and appeal preparation.
